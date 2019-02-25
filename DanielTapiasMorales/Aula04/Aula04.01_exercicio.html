@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Lógica de Programação JavaScript</title>
+        <meta charset = "utf-8">
+    </head>
+    <body>
+        <h1>Lógica de Programação com JavaScript</h1>
+
+        <button onclick="somar()">+</button>
+        <button onclick="subtrair()">-</button>
+        <button onclick="multiplicar()">*</button>
+        <button onclick="dividir()">/</button>
+
+        <div id="output"></div>
+
+        <script>
+            var output = document.querySelector("#output");
+            var mensagem = "";
+
+            var nUser = parseFloat(prompt("Digite um número"));
+            escreverTela(nUser);
+
+            function escreverTela(texto){
+                output.innerHTML = texto;
+            }
+
+            function somar(){
+                // somar o número com o número digitado do usuário
+                var nSoma = parseFloat(prompt("Digite o número para somar"));
+
+                nUser += nSoma;
+                // mostra o resultado no "output"
+                escreverTela(nUser);
+            }
+
+            function subtrair(){
+                // subtrair o número com o número digitado do usuário
+                var nSub = parseFloat(prompt("Digite o número para subtrair"));
+
+                nUser -= nSub;
+                // mostra o resultado no "output"
+                escreverTela(nUser);
+            }
+
+            function multiplicar(){
+                // multiplicar o número com o número digitado do usuário
+                var nMult = parseFloat(prompt("Digite o número para multiplicar"));
+
+                nUser *= nMult;
+                // mostra o resultado no "output"
+                escreverTela(nUser);
+            }
+
+            function dividir(){
+                // Dividir o número com o número digitado do usuário
+                var nDiv = parseFloat(prompt("Digite o número para Dividir"));
+
+                nUser /= nDiv;
+                // mostra o resultado no "output"
+                escreverTela(nUser);
+            }
+        </script>
+    </body>
+</html>
