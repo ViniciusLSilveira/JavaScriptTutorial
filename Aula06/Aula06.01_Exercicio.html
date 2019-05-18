@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+</head>
+
+<body>
+    <h1>Lógica de Programação com JavaScript</h1>
+    <script>
+
+        var dias = new Array('Domingo', 'Segunda-Feira', 'Terça-Feira', 'Quarta-Feira', 'Quinta-Feira', 'Sexta-Feira', 'Sábado');
+
+        var hoje = new Date();
+        var diaSemana = hoje.getDay(); // retorna o dia da semana
+
+        /*
+            0-Domingo
+            1-Segunda
+            2-Terça
+            3-Quarta
+            4-Quinta
+            5-Sexta
+            6-Sábado
+        */
+
+        alert('Bem vido, hoje é ' + dias[diaSemana]);
+
+    </script>
+
+</body>
+
+</html>

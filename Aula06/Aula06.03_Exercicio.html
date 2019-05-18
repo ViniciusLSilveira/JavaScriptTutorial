@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+</head>
+
+<body>
+    <h1>Lógica de Programação com JavaScript</h1>
+    <div id = "output"></div>
+    <script>
+
+        let Usuarios = [
+            {"Nome": "Vinícius de Lima Silveira", "Email": "vinilima.silveira@gmail.com"},
+            {"Nome": "Gabriel Diniz Cassimiro",   "Email": "gdinizcassimiro@gmail.com"  },
+            {"Nome": "Ulisses Bragagnoli",        "Email": "ulissesmbrjunior@gmail.com" }
+        ];
+
+        let msg = "";
+
+        let output = document.querySelector("#output");
+
+        for(let i = 0; i < Usuarios.length; i++){
+            msg += "<h3>Usuário: " + Usuarios[i].Nome + "</h3>";    
+            msg += "<p>E-mail: " + Usuarios[i].Email + "</p><br/>";    
+        }
+
+        output.innerHTML = msg;
+
+    </script>
+
+</body>
+
+</html>
