@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+</head>
+
+<body>
+    <h1>Loteria</h1>
+    <div id="output"></div>
+    <script>
+
+        let sorteados = obtemNumerosSortidos();
+        let output = document.querySelector('#output');
+        let msg = '';
+
+        msg += '<p> números sorteados: </p>';
+        msg += '<p> ' + sorteados.join(', ') +' </p>'
+
+        let meusNumeros = [4, 50, 36, 41, 8, 10];
+
+        for(let i = 0; i < meusNumeros.length; i++){
+            msg += '<p>' + meusNumeros[i] + ': ';
+
+            msg += (sorteados.indexOf(meusNumeros[i]) === -1) ? ' errou ' : ' acertou ';
+            
+            msg += '</p>';
+        }
+
+        output.innerHTML = msg;
+
+        function obtemNumerosSortidos(){
+
+            let sorteados = [];
+
+            function sortear() {
+                return Math.floor(Math.random() * 60);
+            }
+
+            while(sorteados.length < 6){
+                let sorteado = sortear();
+                console.log(sorteados.length, sorteado);
+                if(sorteados.indexOf(sorteado) == -1){
+                    sorteados[sorteados.length] = sorteado;
+                }
+            }
+
+            return sorteados;
+        }
+
+
+
+        console.log(sorteados);
+
+    </script>
+
+</body>
+
+</html>

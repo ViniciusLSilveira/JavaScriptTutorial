@@ -88,7 +88,7 @@
 		let clicadoEmIgual = false;
 
 		function incluirDigito(digito){
-			if(clicadoEmIgual){
+			if(clicadoEmIgual && n1 != '0.'){
 				limpar();
 				n1 = digito;
 				clicadoEmIgual = false;
@@ -114,7 +114,7 @@
 			let resultado = calcular();
 			n1 = resultado;
 			mostrarNoDisplay(n1);
-			console.log('n1', n1, 'operação', operacao, 'n2', n2);
+			console.log('n1:', n1, '| operação:', operacao, '| n2:', n2);
 		}
 
 		function calcular(){
@@ -158,26 +158,20 @@
 		}
 
 		function limpar(){
-			n1 = "0";
-			n2 = '';
+			n1 = '0';
 			operacao = null;
+			n2 = '';
 
 			mostrarNoDisplay(n1);
 		}
 
 		function obterPorcento(){
-			let resultado = 0;
-			if(operacao === null){
-				resultado = parseInt(n1) * (1/100);
-				n1 += '%';
+			if(!n2){
+				n2 = '';
 				mostrarNoDisplay(n1);
-			}else if(operacao !== null && n2 !== ''){
-				if(operacao === '*' || operacao === '/'){
-					resultado = n2 * (1/100);
-				}else{
-					resultado = n2 * (1 / 100) * n1;
-				}
-				n2 += '%';
+			}else{
+				let porcento = (parseFloat(n1) * parseFloat(n2)) / 100;
+				n2 = porcento;
 				mostrarNoDisplay(n2);
 			}
 		}
@@ -185,12 +179,13 @@
 
 		function incluirPonto(){
 
-			if(n2 || operacao !== null){
+			if(operacao && n2 === ''){
+				n2 = '0.';
+			}else if(operacao && n2){
 				n2 += '.';
 			}else{
 				n1 += '.';
 			}
-
 		}
 
 		function mostrarNoDisplay(valor){
