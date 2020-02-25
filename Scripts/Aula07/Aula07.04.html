@@ -19,9 +19,21 @@
     <div id="output"></div>
 
     <script>
-        var msg = "";
+        let msg = "";
 
-        
+        let array = [1, 3, 6, 9];
+        let dobrado = dobrar(array);
+
+        function dobrar(arr){
+            let arrTemp = [];
+            for (let i = 0; i < arr.length; i++) {
+                arrTemp[i] = arr[i] * 2;
+            }
+            return arrTemp;
+        }
+
+        msg += array + "<hr/>";
+        msg += dobrado;
 
         document.querySelector('#output').innerHTML = msg;
     </script>

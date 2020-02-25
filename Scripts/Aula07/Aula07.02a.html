@@ -19,11 +19,23 @@
     <div id="output"></div>
 
     <script>
-        var msg = "";
 
-        
+        let msg = "";
+
+        let daniel = {
+            nome: 'Vinicius',
+            sobrenome: 'Lima Silveira',
+            rg: '11.222.333-44',
+            tel: '952121456'
+        }
+
+        for(propriedade in daniel){
+            msg += propriedade + ": ";
+            msg += daniel[propriedade] + "<br\>";
+        }
 
         document.querySelector('#output').innerHTML = msg;
+
     </script>
 
 </body>

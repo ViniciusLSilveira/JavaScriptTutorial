@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <div id="output"></div>
+
+    <script>
+        let msg = "";
+
+        // let alunos = [
+        // {nome: 'daniel', id: 112233, endereco: 'rua faz de conta 2, ap 3, são paulo SP'},
+        // {nome: 'josé', id: 112244, endereco: 'rua belezura 5, Sao paulo'},
+        // {nome: 'joão', id: 113344, endereco: 'rua belezura 20, Sao Paulo - perto do josé'},
+        // {nome: 'maria', id: 114444, endereco: 'rua chuchu 1, RJ'},
+        // {nome: 'ana', id: 114555, endereco: 'Av belezura 41, SP'},
+        // ]
+
+        // Exercicio 1 - Criar um objeto para guardar os endereços
+
+        function Endereco(dados) {
+            this.logradouro = dados.logradouro || '';
+            this.numero = dados.numero || 0;
+            if(dados.complemento) this.complemento = dados.complemento;
+            this.cidade = dados.cidade;
+            this.estado = dados.estado;
+            if(dados.cep) this.cep = dados.cep;
+        }
+
+        let alunos = [{
+                nome: 'daniel',
+                id: 112233,
+                endereco: new Endereco({
+                    logradouro: 'Rua faz de conta',
+                    numero: 2,
+                    complemento: 'ap 3',
+                    cidade: 'São Paulo',
+                    estado: 'SP',
+                    cep: '11111-111'
+                })
+            },
+            {
+                nome: 'josé',
+                id: 112244,
+                endereco: new Endereco({
+                    logradouro: 'Rua belezura',
+                    numero: 5,
+                    cidade: 'São Paulo',
+                    cep: '22222-222'
+                })
+            },
+            {
+                nome: 'joão',
+                id: 113344,
+                endereco: new Endereco({
+                    logradouro: 'Rua belezura',
+                    numero: 20,
+                    cidade: 'São Paulo',
+                    cep: '33333-333'
+                })
+            },
+            {
+                nome: 'maria',
+                id: 114444,
+                endereco: new Endereco({
+                    logradouro: 'Rua chuchu',
+                    numero: 1,
+                    estado: 'RJ',
+                    cep: '44444-444'
+                })
+            },
+            {
+                nome: 'ana',
+                id: 114555,
+                endereco: new Endereco({
+                    logradouro: 'Av belezura',
+                    numero: 41,
+                    estado: 'SP',
+                    cep: '55555-555'
+                })
+            },
+        ]
+
+        // Exericio 2 - "Separar" os esdereços dos alunos
+        let enderecos = new Array();
+        
+        for (let i = 0; i < alunos.length; i++) {
+            enderecos[i] = alunos[i].endereco;
+            
+        }
+
+        enderecos[1].estado = 'SP';
+        enderecos[2].estado = 'SP';
+        enderecos[3].cidade = 'Rio de Janeiro';
+        enderecos[4].cidade = 'São Paulo';
+
+        // Exercicio 3 - Mostrar na tela as propriedades dos endereços sendo diferentes de undefined
+        for (let i = 0; i < enderecos.length; i++) {
+            let endereco = enderecos[i];
+
+            for(prop in endereco){
+                if(endereco[prop]) msg += prop + ": " + endereco[prop] + "<br/>";
+            }
+            msg += "<hr/>";
+        }
+
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+
+</body>
+
+</html>

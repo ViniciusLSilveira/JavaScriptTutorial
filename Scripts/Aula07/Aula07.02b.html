@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <div id="output"></div>
+
+    <script>
+        let msg = "";
+
+        // Sintaxe formal
+        let obj = new Object();
+        obj.nome = "meu objeto";
+        obj.funcao = function () {
+            msg += "eu sou um método";
+        }
+
+        msg += obj.nome + "<br/>";
+        obj.funcao();
+        msg += "<hr />";
+
+
+        // Sintaxe literal
+        let obj2 = {
+            nome: "meu objeto 2",
+            funcao: function () {
+                msg += "Eu sou o método do obj2";
+            }
+        }
+
+        msg += obj2.nome + "<br/>";
+        obj2.funcao();
+        msg += "<hr/>";
+
+        // Objetos customizados
+        let endereco = {
+            "logradouro": "Coisa",
+            "numero": 2
+        }
+
+        msg += "Rua: " + endereco.logradouro + ", " + endereco.numero + "<hr/>";
+
+        function Endereco(logradouro, numero, cep) {
+            this.logradouro = logradouro;
+            this.numero = numero;
+            this.cep = cep;
+
+            this.enderecoCompleto = function() {
+                return this.logradouro + ", " + this.numero;
+            }
+        }
+
+        let endereco1 = new Endereco("Tal", 5, "14725-836");
+        let endereco2 = new Endereco("Essa", 10, "75321-598");
+        let endereco3 = new Endereco("Aquela", 15, "95147-536");
+        let endereco4 = new Endereco("Qualquer", 20, "87654-321");
+        let endereco5 = new Endereco("Misteriosa", 25, "12345-678");
+
+        let enderecos = new Array(endereco1, endereco2, endereco3, endereco4, endereco5);
+
+        for(propriedade in enderecos){
+            msg += "Rua: " + enderecos[propriedade].enderecoCompleto();
+            msg += ", " + enderecos[propriedade].cep + "<br />";
+        }
+        msg += "<hr>";
+
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+
+</body>
+
+</html>

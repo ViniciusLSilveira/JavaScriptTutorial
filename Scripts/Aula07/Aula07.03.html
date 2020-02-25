@@ -19,9 +19,16 @@
     <div id="output"></div>
 
     <script>
-        var msg = "";
+        let msg = "";
 
-        
+        let nome = ["Vinicius"];
+        let nome2 = nome;
+
+        msg += nome + "<br/>" + nome2 + "<hr/>";
+
+        nome2[0] = ["Daniel"];
+
+        msg += nome + "<br />" + nome2;
 
         document.querySelector('#output').innerHTML = msg;
     </script>
