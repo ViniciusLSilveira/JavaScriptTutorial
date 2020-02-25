@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <div id="output"></div>
+
+    <script>
+        let msg = "";
+
+        function teste1(){
+            msg += "Teste1 chamado";
+        }
+
+        function teste2(p){
+            msg += "Teste2 chamado recebendo p: " + p;
+        }
+
+        function executa(func){
+            msg += "Executa chamado"
+            msg += "<br/>";
+
+            if(typeof(func) === 'function'){
+                func('teste de parametro de callback');
+            }
+
+            msg += "<hr/>";
+        }
+
+        executa(teste1);
+        executa(teste2);
+        executa(function(x){
+            msg += "Função anonima, " + x;
+        });
+
+
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <div id="output"></div>
+
+    <script>
+        let msg = "";
+        let chamouRecursiva = 0;
+
+        function fibonacci(n, cache) {
+            chamouRecursiva++;
+
+            cache = cache || {};
+            if(cache[n]) return cache[n];
+
+            if (n <= 2){
+                return 1;
+            } 
+
+            cache[n] = fibonacci(n - 1, cache) + fibonacci(n - 2, cache);
+            return cache[n];
+        }
+
+        // Fibonacci
+        // 1 1 2 3 5 8 13 21 34 55 ...
+
+        msg += fibonacci(80) + " | Chamada: " + chamouRecursiva + " vezes" + "<hr/>";
+
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+
+</body>
+
+</html>

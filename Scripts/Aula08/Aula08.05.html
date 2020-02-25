@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <div id="output"></div>
+
+    <script>
+        let msg = "";
+
+        function dizOla(praQuem, cb) {
+            if (typeof cb === 'function') {
+                return cb(praQuem);
+            }
+
+            return msg += "Olá " + praQuem;
+        }
+
+        function boaNoite(praQuem) {
+            msg += "Boa noite " + praQuem;
+        }
+
+        function boaTarde(praQuem) {
+            msg += "Boa tarde " + praQuem;
+        }
+
+
+
+        dizOla("Maria");
+        msg += "<hr/>";
+
+        dizOla("Ana", function bomDia(praQuem) {
+            msg += "Bom dia " + praQuem;
+        });
+        msg += "<hr/>";
+
+        dizOla("Daniel", boaTarde);
+        msg += "<hr/>";
+
+        dizOla("Vinícius", boaNoite);
+        msg += "<hr/>";
+
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+
+</body>
+
+</html>

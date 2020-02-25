@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Lógica de Programação JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Vinícius de Lima Silveira">
+
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Lógica de Programação com JavaScript</h1>
+
+    <div id="output"></div>
+
+    <script>
+        let msg = "";
+
+        function testeSalto1() {
+            for (let i = 0; i < 10; i++) {
+                if (i == 5) {
+                    return "fim da funcao return";
+                }
+                msg += i + "<br>";
+            }
+        }
+
+        function testeSalto2() {
+            for (let i = 0; i < 10; i++) {
+                if (i == 5) {
+                    continue;
+                }
+                msg += i + "<br>";
+            }
+            return "fim da funcao continue";
+        }
+
+        function testeSalto3() {
+            for (let i = 0; i < 10; i++) {
+                if (i == 5) {
+                    break;
+                }
+                msg += i + "<br>";
+            }
+            return "fim da funcao break";
+        }
+
+        function testeSalto4() {
+            for (let i = 0; i < 10; i++) {
+                if (i == 5) {
+                    return "Teste";
+                }
+                msg += i + "<br>";
+            }
+            return "fim da funcao return";
+        }
+
+        let teste1 = testeSalto1();
+        msg += teste1 + "<hr/>";
+
+        let teste2 = testeSalto2();
+        msg += teste2 + "<hr/>";
+
+        let teste3 = testeSalto3();
+        msg += teste3 + "<hr/>";
+
+        let teste4 = testeSalto4();
+        msg += teste4 + "<hr/>";
+
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+
+</body>
+
+</html>
