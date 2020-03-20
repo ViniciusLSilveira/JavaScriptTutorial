@@ -1,0 +1,15 @@
+{
+  "name": "javascript-formacao-basica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinicius Lima",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom-quokka-plugin": "^1.0.15",
+    "jshint": "^2.11.0"
+  }
+}
