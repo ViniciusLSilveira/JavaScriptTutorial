@@ -1,23 +1,15 @@
-const CTA = document.querySelectorAll(".cta a");
+const CTA = document.querySelector(".cta a");
 const ALERT = document.querySelector("#booking-alert");
 
-
-[].forEach.call(CTA, el => {
-    if(el !== this) el.remove('hide');
-});
-
+CTA.classList.remove("hide");
 ALERT.classList.add("hide");
 
 function reveal(e) {
-    let target = this;
-    target.classList.toggle('hide');
     e.preventDefault();
-    [].forEach.call(CTA, el => {
-        el.toggle('hide');
-    });;
+    CTA.classList.toggle("hide");
     ALERT.classList.toggle("hide");
 }
 
-[].forEach.call(CTA, el => {
-    el.onClick = reveal;
-});
+CTA.addEventListener('click', reveal, false);
+CTA.addEventListener('click', function(){console.log("O botão CTA foi clicado")}, false);
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Mouse Tracker</title>
+		<script src="JS/tracker-script.js" async></script>
+		<style>
+			body {
+				width: 100vw;
+				height: 100vh;
+            }
+
+			.circleheight {
+				position: absolute;
+				top: 1px;
+				width: 50px;
+				height: 50px;
+				color: transparent;
+				border: 2px solid red;
+				border-radius: 50%;
+			}
+
+			.circlewidth {
+                position: absolute;
+				top: 1px;
+				width: 2rem;
+				height: 2rem;
+				color: transparent;
+				border: 0.1rem solid blue;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="circleheight"></div>
+		<div class="circlewidth"></div>
+	</body>
+</html>
